@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - Contacto</title>
+    <style>
+        /* --- Estilos Generales y de Wireframe (Escala de Grises) --- */
+        body { font-family: sans-serif; margin: 0; color: #333; background-color: #F8F9FA; }
+        * { box-sizing: border-box; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        h1 { font-size: 3em; }
+        h2 { font-size: 2.2em; margin-bottom: 20px; }
+        p { line-height: 1.6; }
+        a { color: #555; text-decoration: none; font-weight: bold; }
+        .placeholder-img { background-color: #E0E0E0; border: 1px solid #CCC; display: flex; align-items: center; justify-content: center; color: #888; text-align: center; width: 100%; }
+        .btn { padding: 15px 30px; display: inline-block; font-weight: bold; text-align: center; border-radius: 5px; cursor: pointer; background-color: #555; color: #FFF; border: none; }
+        
+        /* --- Componentes Globales (Header/Footer) --- */
+        header { background-color: #222; color: #FFF; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        header .logo { font-weight: bold; font-size: 1.5em; }
+        header nav a { color: #EEE; margin: 0 15px; }
+        footer { background-color: #222; color: #EEE; padding: 40px 20px; text-align: center; }
+
+        /* --- Estilos Específicos de la Página --- */
+        .contact-layout { display: flex; gap: 50px; align-items: flex-start; }
+        .contact-form { flex: 1; }
+        .contact-info { flex: 1; }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        input, textarea, select { padding: 12px; border: 1px solid #CCC; border-radius: 4px; font-size: 1em; width: 100%; }
+        .map-placeholder { width: 100%; height: 300px; background-color: #E0E0E0; border: 1px solid #CCC; display: flex; align-items: center; justify-content: center; color: #888; margin-bottom: 20px; }
+        .contact-details p { margin: 5px 0 15px 0; }
+        .contact-details strong { display: block; margin-bottom: 5px; color: #111;}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">[Logo] Horizonte Bilingüe</div>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/nc">Nuestro Colegio</a>
+            <a href="/oe">Oferta Educativa</a>
+            <a href="/ad">Admisiones</a>
+            <a href="/ve">Vida Estudiantil</a>
+            <a href="/co">Contacto</a>
+        </nav>
+        <a href="#" class="btn">[ Agenda una Visita ]</a>
+    </header>
+
+    <main class="container">
+        <div class="contact-layout">
+            <div class="contact-form">
+                <h2>Envíanos un Mensaje</h2>
+                <form>
+                    <input type="text" placeholder="Nombre completo" required>
+                    <input type="email" placeholder="Correo electrónico" required>
+                    <input type="tel" placeholder="Teléfono">
+                    <select required>
+                        <option value="">Selecciona un asunto...</option>
+                        <option value="admisiones">Admisiones</option>
+                        <option value="informacion">Información General</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    <textarea placeholder="Tu mensaje..." rows="6" required></textarea>
+                    <button type="submit" class="btn">[ Enviar Mensaje ]</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h2>Nuestra Ubicación</h2>
+                <div class="map-placeholder">
+                    [ Mapa de Google Maps Embebido ]
+                </div>
+                <div class="contact-details">
+                    <p>
+                        <strong>Dirección</strong>
+                        Av. Siempre Viva 123, Col. Primavera,<br>
+                        C.P. 12345, Ciudad Ejemplo, México.
+                    </p>
+                    <p>
+                        <strong>Admisiones</strong>
+                        admisiones@horizonte.edu<br>
+                        Tel: (55) 1234 5678 ext. 101
+                    </p>
+                    <p>
+                        <strong>Recepción</strong>
+                        contacto@horizonte.edu<br>
+                        Tel: (55) 1234 5678 ext. 100
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer style="background-color: #222; color: #EEE; padding: 40px 20px; text-align:center;">
+        <p>© 2025 Colegio Horizonte Bilingüe. Todos los derechos reservados. | Aviso de Privacidad</p>
+    </footer>
+
+</body>
+</html>
