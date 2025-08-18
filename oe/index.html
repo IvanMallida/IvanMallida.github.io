@@ -5,10 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wireframe - Oferta Educativa</title>
     <link rel="stylesheet" href="../index.css">
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="logo">[Logo] Horizonte Bilingüe</div>
+        <div class="logo"><strong>Horizonte Bilingüe</strong></div>
         <nav>
             <a href="/">Inicio</a>
             <a href="/nc">Nuestro Colegio</a>
@@ -21,22 +40,18 @@
     </header>
 
     <main>
-        <section class="title-banner">
-            <div class="placeholder-img">[IMG: Alumnos en laboratorio]</div>
+        <section class="title-banner" style="background-image: url('https://images.pexels.com/photos/3992870/pexels-photo-3992870.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <h1>Excelencia Académica para Cada Etapa</h1>
         </section>
 
         <section class="level-section">
             <div class="level-content">
-                <div class="placeholder-img">[IMG: Niños en Primaria]</div>
+                <div class="placeholder-img" style="background-image: url('https://images.pexels.com/photos/8256331/pexels-photo-8256331.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
                 <div class="level-details">
                     <h2>Nivel Primaria</h2>
-                    <p>Fomentamos la curiosidad y el amor por el aprendizaje en un entorno de apoyo. Nuestro enfoque holístico asegura que los niños desarrollen habilidades académicas, sociales y emocionales fundamentales para su éxito.</p>
-                    <a href="#" class="btn">[ Conocer más sobre Primaria ]</a>
-                    <div class="level-links">
-                        <a href="#">[ICON] Modelo Educativo</a>
-                        <a href="#">[ICON] Plan de Estudios</a>
-                        <a href="#">[ICON] Talleres</a>
+                    <p>Fomentamos la curiosidad y el amor por el aprendizaje en un entorno de apoyo. Nuestro enfoque holístico asegura que los niños desarrollen habilidades académicas, sociales y emocionales.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/R4ICYqQ6vQ4" title="Metodologías Activas Innovadoras" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -44,24 +59,21 @@
 
         <section class="level-section">
             <div class="level-content">
-                <div class="placeholder-img">[IMG: Jóvenes en Secundaria]</div>
-                <div class="level-details">
+                 <div class="level-details">
                     <h2>Nivel Secundaria</h2>
-                    <p>Preparamos a nuestros estudiantes para los desafíos académicos y personales de la adolescencia. El programa se centra en el pensamiento crítico, la resolución de problemas y la preparación para la educación superior.</p>
-                    <a href="#" class="btn">[ Conocer más sobre Secundaria ]</a>
-                    <div class="level-links">
-                        <a href="#">[ICON] Modelo Educativo</a>
-                        <a href="#">[ICON] Plan de Estudios</a>
-                        <a href="#">[ICON] Talleres</a>
+                    <p>Preparamos a nuestros estudiantes para los desafíos académicos y personales de la adolescencia, centrándonos en el pensamiento crítico y la resolución de problemas mediante el aprendizaje basado en proyectos.</p>
+                     <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/hrBjKEu5EtE" title="Aprendizaje Basado en Proyectos (ABP)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
+                <div class="placeholder-img" style="background-image: url('https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
             </div>
         </section>
         
         <section class="container bilingual-cta">
             <h2>Programa Bilingüe de Inmersión Total</h2>
             <p>El dominio del inglés es una herramienta esencial para el futuro. Nuestro programa garantiza la fluidez y la competencia cultural.</p>
-            <a href="#" class="btn">[ Descubre nuestro programa bilingüe ]</a>
+            <a href="#" class="btn btn-secondary">[ Descubre nuestro programa bilingüe ]</a>
         </section>
     </main>
     

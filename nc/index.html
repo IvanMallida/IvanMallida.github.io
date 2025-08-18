@@ -5,10 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wireframe - Nuestro Colegio</title>
     <link rel="stylesheet" href="../index.css">
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="logo">[Logo] Horizonte Bilingüe</div>
+        <div class="logo"><strong>Horizonte Bilingüe</strong></div>
         <nav>
             <a href="/">Inicio</a>
             <a href="/nc">Nuestro Colegio</a>
@@ -21,36 +40,33 @@
     </header>
 
     <main>
-        <section class="title-banner">
-            <div class="placeholder-img">[IMG: Fachada del Colegio]</div>
+        <section class="title-banner" style="background-image: url('https://images.pexels.com/photos/207691/pexels-photo-207691.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <h1>Nuestra Identidad: Pasión por Educar</h1>
         </section>
 
         <div class="container">
             <article class="content-block">
-                <div class="placeholder-img">[IMG: Alumnos colaborando]</div>
+                <div class="placeholder-img" style="background-image: url('https://images.pexels.com/photos/8617972/pexels-photo-8617972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
                 <div class="text-content">
                     <h3>Misión y Visión</h3>
                     <p>Nuestra misión es formar individuos bilingües, críticos y compasivos, preparados para liderar en un mundo globalizado. Visualizamos un futuro donde nuestros egresados son agentes de cambio positivo.</p>
-                    <a href="#" class="btn">[ Leer más ]</a>
+                    <a href="#" class="btn btn-secondary">[ Leer más ]</a>
                 </div>
             </article>
 
             <article class="content-block values-block">
+                 <div class="placeholder-img" style="background-image: url('https://images.pexels.com/photos/69435/pexels-photo-69435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
                 <div class="text-content">
-                    <h3>Nuestros Valores</h3>
-                    <div class="values-grid">
-                        <div class="value-item"><div class="placeholder-icon">[ICON]</div><strong>Respeto</strong></div>
-                        <div class="value-item"><div class="placeholder-icon">[ICON]</div><strong>Responsabilidad</strong></div>
-                        <div class="value-item"><div class="placeholder-icon">[ICON]</div><strong>Empatía</strong></div>
-                        <div class="value-item"><div class="placeholder-icon">[ICON]</div><strong>Integridad</strong></div>
+                    <h3>Nuestros Valores en Acción</h3>
+                    <p>Fomentamos la integridad, el respeto, la responsabilidad y la empatía en cada miembro de nuestra comunidad, creando un ambiente de confianza y colaboración.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/mZQKb1i-t84" title="LOS VALORES para niños" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <a href="#" class="btn">[ Descubre nuestros valores ]</a>
                 </div>
             </article>
 
              <article class="content-block">
-                <div class="placeholder-img">[Foto Director]</div>
+                <div class="placeholder-img" style="background-image: url('https://images.pexels.com/photos/7148593/pexels-photo-7148593.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
                 <div class="text-content">
                     <h3>Mensaje del Director</h3>
                     <p>"En Horizonte Bilingüe, cada día es una oportunidad para inspirar y ser inspirados. Los invito a formar parte de esta increíble comunidad educativa."</p>
@@ -58,16 +74,16 @@
                 </div>
             </article>
             
-            <article class="content-block">
-                <div class="text-content" style="text-align: center; width:100%;">
-                    <h3>Nuestras Instalaciones</h3>
-                    <div class="gallery-grid">
-                        <div class="placeholder-img">[IMG]</div>
-                        <div class="placeholder-img">[IMG]</div>
-                        <div class="placeholder-img">[IMG]</div>
-                        <div class="placeholder-img">[IMG]</div>
-                    </div>
-                    <a href="#" class="btn">[ Explora nuestro campus ]</a>
+            <article class="container">
+                <h2 style="text-align: center;">Nuestras Instalaciones</h2>
+                <div class="gallery-grid">
+                    <div class="placeholder-img" style="min-height: 250px; background-image: url('https://images.pexels.com/photos/207684/pexels-photo-207684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    <div class="placeholder-img" style="min-height: 250px; background-image: url('https://images.pexels.com/photos/3761136/pexels-photo-3761136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    <div class="placeholder-img" style="min-height: 250px; background-image: url('https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                    <div class="placeholder-img" style="min-height: 250px; background-image: url('https://images.pexels.com/photos/414548/pexels-photo-414548.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#" class="btn btn-primary">[ Explora nuestro campus ]</a>
                 </div>
             </article>
         </div>
