@@ -3,171 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframe - Inicio | Colegio Horizonte Bilingüe</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Prototipo: Pantalla de Inicio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
-            border-radius: 8px;
-            margin: 40px 0;
+        :root {
+            --bg-dark: #0B0C2D;
+            --accent-orange: #FF6B00;
+            --text-light: #F5F5F5;
         }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        h1, h2, h3 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+        }
+        .main-button {
+            background-color: var(--accent-orange);
+            color: var(--text-light);
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="logo"><strong>Horizonte Bilingüe</strong></div>
-        <nav>
-            <a href="/">Inicio</a>
-            <a href="/nc">Nuestro Colegio</a>
-            <a href="/oe">Oferta Educativa</a>
-            <a href="/ad">Admisiones</a>
-            <a href="/ve">Vida Estudiantil</a>
-            <a href="/co">Contacto</a>
-        </nav>
-        <a href="#" class="btn btn-primary">Agenda una Visita</a>
+    <header class="flex justify-start p-6">
+        <div class="w-48 h-12 flex items-center justify-center bg-gray-700/50 rounded-lg">
+            <p class="text-sm">LOGO CLIENTE</p>
+        </div>
     </header>
-
-    <main>
-        <section class="hero placeholder-img" style="background-image: url('https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
-            <h1>Formando líderes para el mañana.</h1>
-            <p>Descubre un ambiente educativo que inspira el crecimiento personal y la excelencia académica.</p>
-            <div>
-                <a href="#" class="btn btn-primary">[ Conoce nuestra Oferta Educativa ]</a>
-                <a href="#" class="btn btn-secondary">[ Proceso de Admisión ]</a>
-            </div>
-        </section>
-
-        <section class="container welcome-section">
-            <div class="welcome-grid">
-                <div class="placeholder-img" style="background-image: url('https://images.pexels.com/photos/7148593/pexels-photo-7148593.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); border-radius: 50%;"></div>
-                <div>
-                    <h2>Bienvenidos a Horizonte Bilingüe</h2>
-                    <p>Somos una institución comprometida con el desarrollo integral de cada uno de nuestros alumnos, fomentando un ambiente bilingüe, seguro y humano. Nuestra filosofía se basa en el respeto, la responsabilidad y la pasión por aprender.</p>
-                    <a href="#">Conoce más sobre nosotros -></a>
-                </div>
-            </div>
-        </section>
-
-        <section class="container">
-            <h2 style="text-align:center;">Conoce Nuestra Esencia</h2>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/mpiwWKEfuD4" title="¿Qué es Educación Bilingüe?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <section class="container">
-            <h2>Nuestra Oferta Educativa</h2>
-            <div class="cards-2col">
-                <div class="card">
-                    <div class="placeholder-img" style="background-image: url('https://images.pexels.com/photos/8472739/pexels-photo-8472739.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-                    <h3>Primaria</h3>
-                    <p>Una base sólida para el futuro, combinando aprendizaje académico con desarrollo de habilidades sociales.</p>
-                    <a href="#" class="btn btn-secondary">[ Ver detalles ]</a>
-                </div>
-                <div class="card">
-                    <div class="placeholder-img" style="background-image: url('https://images.pexels.com/photos/8617965/pexels-photo-8617965.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-                    <h3>Secundaria</h3>
-                    <p>Preparamos a los jóvenes para los retos del mañana con un enfoque en liderazgo y pensamiento crítico.</p>
-                    <a href="#" class="btn btn-secondary">[ Ver detalles ]</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="container">
-            <h2>Una Formación Integral</h2>
-            <div class="value-prop-grid">
-                <div class="value-prop-item">
-                    <div class="placeholder-icon" style="background-image: url('https://storage.googleapis.com/gemini-prod-us-east1-953839209539/uploads/2024/05/17/2d9f30b912a76202.png'); background-size: 60%; background-repeat: no-repeat; background-position: center;"></div>
-                    <h3>Bilingüismo</h3>
-                    <p>Dominio del inglés como segunda lengua para un futuro global.</p>
-                </div>
-                <div class="value-prop-item">
-                    <div class="placeholder-icon" style="background-image: url('https://storage.googleapis.com/gemini-prod-us-east1-953839209539/uploads/2024/05/17/57a73aa57f363065.png'); background-size: 60%; background-repeat: no-repeat; background-position: center;"></div>
-                    <h3>Innovación y Tecnología</h3>
-                    <p>Herramientas de vanguardia para potenciar el aprendizaje.</p>
-                </div>
-                <div class="value-prop-item">
-                    <div class="placeholder-icon" style="background-image: url('https://storage.googleapis.com/gemini-prod-us-east1-953839209539/uploads/2024/05/17/233e38707106c592.png'); background-size: 60%; background-repeat: no-repeat; background-position: center;"></div>
-                    <h3>Desarrollo de Valores</h3>
-                    <p>Formamos ciudadanos responsables, éticos y comprometidos.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section class="container">
-            <h2>Vida en el Campus</h2>
-            <div class="news-grid">
-                <div class="news-item">
-                    <div class="placeholder-img" style="background-image: url('https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-                    <div class="news-item-content">
-                        <h3>Feria de Ciencias 2025</h3>
-                        <p><small>15 de Julio, 2025</small></p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="placeholder-img" style="background-image: url('https://images.pexels.com/photos/236294/pexels-photo-236294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-                    <div class="news-item-content">
-                        <h3>Torneo Deportivo Intercolegial</h3>
-                        <p><small>10 de Julio, 2025</small></p>
-                    </div>
-                </div>
-                <div class="news-item">
-                    <div class="placeholder-img" style="background-image: url('https://images.pexels.com/photos/764681/pexels-photo-764681.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
-                     <div class="news-item-content">
-                        <h3>Semana Cultural y Artística</h3>
-                        <p><small>5 de Julio, 2025</small></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="container final-cta">
-            <h2>¿Listo para dar el siguiente paso?</h2>
-            <p>Conoce nuestras instalaciones y equipo docente.</p>
-            <a href="#" class="btn btn-secondary-white">[ Agenda una Visita Ahora ]</a>
-        </section>
+    <main class="flex-grow flex flex-col items-center justify-center text-center gap-8 px-4">
+        <h1 class="text-5xl md:text-7xl font-black" style="color: var(--text-light);">Viaje Interplanetario</h1>
+        <!-- Personaje Guía "Cometa" -->
+        <div class="w-32 h-32 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center shadow-lg">
+            <div class="w-16 h-16 bg-cyan-300 rounded-full flex items-center justify-center text-4xl">👁️</div>
+        </div>
+        <button class="main-button">Iniciar Aventura</button>
     </main>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div class="logo" style="color: #FFFFFF;"><strong>Horizonte Bilingüe</strong></div>
-                <p>Av. Siempre Viva 123, Col. Primavera, C.P. 12345, Ciudad Ejemplo</p>
-                <p>Tel: (55) 1234 5678</p>
-            </div>
-            <div class="footer-col">
-                <h3>Mapa del Sitio</h3>
-                <a href="#">Inicio</a>
-                <a href="#">Nuestro Colegio</a>
-                <a href="#">Oferta Educativa</a>
-                <a href="#">Admisiones</a>
-                <a href="#">Vida Estudiantil</a>
-                <a href="#">Contacto</a>
-            </div>
-            <div class="footer-col">
-                <h3>Síguenos</h3>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">contacto@horizonte.edu</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Colegio Horizonte Bilingüe. Todos los derechos reservados. | Aviso de Privacidad</p>
-        </div>
-    </footer>
-
 </body>
 </html>
