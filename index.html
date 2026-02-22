@@ -3,222 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototipo: Viaje Interplanetario</title>
+    <title>Géneros periodísticos y de opinión | Wiki Creativa UVM</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
     <style>
+        /* Paleta Cromática Institucional UVM */
         :root {
-            --bg-dark: #0B0C2D;
-            --accent-orange: #FF6B00;
-            --accent-cyan: #00C2D1;
-            --text-light: #F5F5F5;
+            --blanco: #FFFFFF;
+            --gris-claro: #D9D9D9;
+            --gris-oscuro: #333333;
+            --negro-profundo: #090303;
+            --azul-profundo: #172836;
+            --rojo-uvm: #C5151A;
+            --naranja: #EC7033;
+            --azul-claro: #89C4D6;
         }
+
+        /* Reseteo y Estilos Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            overflow: hidden;
+            font-family: 'Open Sans', sans-serif;
+            color: var(--gris-oscuro);
+            background-color: var(--blanco);
+            line-height: 1.6;
         }
+
+        /* Jerarquía Tipográfica */
         h1, h2, h3 {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 900;
+            font-family: 'Poppins', sans-serif;
+            color: var(--negro-profundo);
+            text-align: left;
         }
-        .screen {
+
+        h1 { /* Head 1 */
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        h2 { /* Head 2 */
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            margin-top: 40px;
+        }
+
+        .intro-text { /* Párrafo Introductorio */
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        p { /* Cuerpo de texto */
+            font-size: 16px;
+            margin-bottom: 16px;
+            max-width: 70ch; /* Ancho de línea óptimo para lectura */
+        }
+
+        /* Layout / Retícula */
+        .header-nav {
+            background-color: var(--blanco);
+            padding: 16px 64px;
+            border-bottom: 1px solid var(--gris-claro);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--rojo-uvm);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px 64px;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .main-content {
+            flex: 1 1 65%; /* Ocupa aprox 8 columnas */
+        }
+
+        .sidebar {
+            flex: 1 1 30%; /* Ocupa aprox 4 columnas */
+            background-color: #FAFAFA;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--azul-claro);
+            height: fit-content;
+        }
+
+        /* Elementos UI */
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            object-fit: cover;
+            max-height: 450px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--rojo-uvm);
+            color: var(--blanco);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            min-height: 44px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--naranja);
+        }
+
+        /* Tarjetas de Comparación */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: var(--blanco);
+            border: 1px solid var(--gris-claro);
+            border-radius: 16px;
+            padding: 24px;
+            transition: border-color 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--azul-claro);
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 16px;
+        }
+
+        /* Contenedor de Video Responsivo */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+
+        .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            padding: 1.5rem;
-            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
         }
-        .screen.active {
-            opacity: 1;
-            visibility: visible;
+
+        /* Responsive Design (Tablet & Mobile) */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                padding: 32px;
+            }
+            .header-nav {
+                padding: 16px 32px;
+            }
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
         }
-        .main-button {
-            background-color: var(--accent-orange);
-            color: var(--text-light);
-            padding: 0.75rem 2rem; /* Tamaño adecuado para dedos */
-            border-radius: 9999px;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        .main-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-        }
-        .planet {
-            border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-            font-family: 'Nunito', sans-serif;
-        }
-        .planet:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px currentColor;
-        }
-        /* Estilos específicos para planetas */
-        .mercury { background: linear-gradient(135deg, #B7B7B7, #898989); width: 30px; height: 30px; }
-        .venus { background: linear-gradient(135deg, #FAD6A5, #D4A15D); width: 45px; height: 45px; }
-        .earth { background: linear-gradient(135deg, #6B93D6, #4172B3); width: 50px; height: 50px; }
-        .mars { background: linear-gradient(135deg, #D97C52, #AD4A25); width: 40px; height: 40px; }
-        .jupiter { background: linear-gradient(135deg, #E0C5A3, #B89B7E); width: 100px; height: 100px; font-size: 1rem; }
-        .saturn { background: linear-gradient(135deg, #F0E5C4, #D6C39A); width: 90px; height: 90px; font-size: 1rem; position: relative; }
-        .saturn::after { content: ''; position: absolute; width: 150%; height: 8px; background: rgba(240, 229, 196, 0.7); border-radius: 50%; transform: rotate(-20deg); }
-        .uranus { background: linear-gradient(135deg, #AEE5D8, #87CBB9); width: 70px; height: 70px; }
-        .neptune { background: linear-gradient(135deg, #5D8AA8, #3B6B8A); width: 65px; height: 65px; }
     </style>
 </head>
 <body>
 
-    <!-- =============================================================== -->
-    <!-- PANTALLA 1: INICIO / SPLASH SCREEN                              -->
-    <!-- =============================================================== -->
-    <section id="splash-screen" class="screen active">
-        <header class="flex justify-start p-4">
-            <div class="w-48 h-12 flex items-center justify-center bg-gray-700/50 rounded-lg">
-                <p class="text-sm">LOGO CLIENTE</p>
-            </div>
-        </header>
-        <main class="flex-grow flex flex-col items-center justify-center text-center gap-8 px-4">
-            <h1 class="text-5xl md:text-7xl font-black" style="color: var(--text-light);">Viaje Interplanetario</h1>
-            <!-- Personaje Guía "Cometa" -->
-            <div class="w-32 h-32 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center shadow-lg animate-bounce">
-                <div class="w-16 h-16 bg-cyan-300 rounded-full flex items-center justify-center text-4xl">👁️</div>
-            </div>
-            <button id="start-btn" class="main-button">Iniciar Aventura</button>
-        </main>
-    </section>
+    <header class="header-nav">
+        <div class="logo">Wiki Creativa UVM</div>
+        <input type="text" placeholder="¿Qué quieres aprender hoy?" style="padding: 8px 16px; border-radius: 20px; border: 1px solid #D9D9D9; width: 300px; font-family: 'Open Sans';">
+    </header>
 
-    <!-- =============================================================== -->
-    <!-- PANTALLA 2: VISTA PRINCIPAL (SISTEMA SOLAR)                     -->
-    <!-- =============================================================== -->
-    <section id="main-screen" class="screen">
-        <header class="flex justify-between items-center p-4">
-            <div class="w-40 h-10 flex items-center justify-center bg-gray-700/50 rounded-lg">
-                <p class="text-sm">LOGO CLIENTE</p>
-            </div>
-            <h2 class="text-2xl md:text-3xl">Elige un planeta para explorar</h2>
-        </header>
-        <main class="flex-grow flex flex-col md:flex-row items-center gap-8 p-4">
-            <!-- Columna de Instrucciones -->
-            <aside class="w-full md:w-1/4 h-full bg-black/30 rounded-2xl p-6 flex flex-col items-center text-center gap-4">
-                 <div class="w-24 h-24 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center shadow-lg">
-                    <div class="w-12 h-12 bg-cyan-300 rounded-full flex items-center justify-center text-3xl">👁️</div>
-                </div>
-                <h3 class="text-xl font-bold">¡Hola, explorador!</h3>
-                <p class="text-sm">Soy Cometa, tu guía. Haz clic en cualquier planeta para aprender sus secretos. ¡Completa las misiones para ganar insignias!</p>
-            </aside>
-            <!-- Sistema Solar Interactivo -->
-            <div class="w-full md:w-3/4 h-full flex items-center justify-center relative gap-4 md:gap-8">
-                <div class="w-32 h-32 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-yellow-400 to-orange-600 shadow-2xl shadow-yellow-500/50 flex items-center justify-center text-3xl font-bold">SOL</div>
-                <div class="planet mercury open-detail" title="Mercurio"></div>
-                <div class="planet venus open-detail" title="Venus"></div>
-                <div class="planet earth open-detail" title="Tierra"></div>
-                <div class="planet mars open-detail" title="Marte"></div>
-                <div class="planet jupiter open-detail" title="Júpiter"></div>
-                <div class="planet saturn open-detail" title="Saturno"></div>
-                <div class="planet uranus open-detail" title="Urano"></div>
-                <div class="planet neptune open-detail" title="Neptuno"></div>
-            </div>
-        </main>
-    </section>
+    <main class="container">
+        
+        <article class="main-content">
+            
+            <h1>Géneros periodísticos y de opinión</h1>
+            
+            <img src="https://images.pexels.com/photos/6661139/pexels-photo-6661139.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mujer analizando un texto con una lupa, representando el análisis crítico de noticias" class="hero-image" loading="lazy">
+            
+            <p class="intro-text">
+                "¿Acabas de leer una verdad comprobada o solo lo que alguien cree que pasó? Esa confusión cambia tu forma de ver el mundo."
+            </p>
 
-    <!-- =============================================================== -->
-    <!-- PANTALLA 3: DETALLE DE PLANETA (PLANTILLA)                      -->
-    <!-- =============================================================== -->
-    <section id="detail-screen" class="screen">
-         <header class="flex justify-between items-center p-4">
-            <div class="w-40 h-10 flex items-center justify-center bg-gray-700/50 rounded-lg">
-                <p class="text-sm">LOGO CLIENTE</p>
-            </div>
-            <h2 id="planet-title" class="text-2xl md:text-4xl">Nombre del Planeta</h2>
-            <button id="back-btn" class="main-button" style="background-color: var(--accent-cyan);">Volver al Mapa</button>
-        </header>
-        <main class="flex-grow flex flex-col md:flex-row items-stretch gap-8 p-4">
-            <!-- Imagen del Planeta -->
-            <div class="w-full md:w-1/3 flex items-center justify-center">
-                <div id="planet-image-detail" class="w-64 h-64 md:w-96 md:h-96 planet" title="Planeta"></div>
-            </div>
-            <!-- Información y Pestañas -->
-            <div class="w-full md:w-2/3 bg-black/30 rounded-2xl p-6">
-                <div class="flex border-b border-gray-500 mb-4">
-                    <button class="py-2 px-4 text-lg font-bold border-b-4 border-cyan-400">Ficha Técnica</button>
-                    <button class="py-2 px-4 text-lg text-gray-400">Galería</button>
-                    <button class="py-2 px-4 text-lg text-gray-400">Misión</button>
+            <p>
+                La cultura visual y digital actual nos satura de información. Comprender la diferencia entre los géneros periodísticos informativos y los de opinión no es solo un tema académico; es una herramienta de defensa personal intelectual.
+            </p>
+
+            <h2>Comparaciones Directas: Datos vs. Opinión</h2>
+            <p>Aprende a identificar rápidamente si estás leyendo hechos objetivos o perspectivas subjetivas.</p>
+
+            <div class="comparison-grid">
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#172836" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <h3 style="font-family: 'Poppins'; font-size: 20px; margin-bottom: 8px;">Género Informativo (Hechos)</h3>
+                    <p>Su objetivo es transmitir datos duros, comprobables y objetivos. El autor no emite juicios de valor. <em>Ejemplo: La Noticia, El Reportaje Objetivo.</em></p>
                 </div>
-                <div class="content-panel">
-                    <h3 class="text-2xl mb-2">Datos Curiosos</h3>
-                    <p class="text-base" style="max-width: 65ch;"> <!-- Control de ancho de línea -->
-                        Aquí se mostraría la información clave del planeta seleccionado. Por ejemplo, su diámetro, distancia al sol, y un dato divertido para mantener el interés del niño. El texto se limita a un ancho de línea óptimo para la lectura.
-                    </p>
+                
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#EC7033" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <h3 style="font-family: 'Poppins'; font-size: 20px; margin-bottom: 8px;">Género de Opinión (Creencias)</h3>
+                    <p>Su propósito es analizar, interpretar o valorar un hecho. Refleja la postura del medio o del autor. <em>Ejemplo: La Columna, El Editorial, El Artículo de Opinión.</em></p>
                 </div>
             </div>
-        </main>
-    </section>
 
-    <script>
-        // --- Lógica de Navegación ---
-        const splashScreen = document.getElementById('splash-screen');
-        const mainScreen = document.getElementById('main-screen');
-        const detailScreen = document.getElementById('detail-screen');
+            <h2>Respaldo Teórico</h2>
+            <p>Para profundizar en cómo se clasifican estos géneros y observar ejemplos claros, revisa la siguiente explicación estructurada:</p>
 
-        const startBtn = document.getElementById('start-btn');
-        const backBtn = document.getElementById('back-btn');
-        const planetButtons = document.querySelectorAll('.open-detail');
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/4IQpf1urNgc" title="Géneros Periodísticos" loading="lazy" allowfullscreen></iframe>
+            </div>
 
-        const planetTitle = document.getElementById('planet-title');
-        const planetImageDetail = document.getElementById('planet-image-detail');
+        </article>
 
-        function navigateTo(screen) {
-            splashScreen.classList.remove('active');
-            mainScreen.classList.remove('active');
-            detailScreen.classList.remove('active');
-            screen.classList.add('active');
-        }
+        <aside class="sidebar">
+            <h3 style="font-size: 18px; margin-bottom: 16px; font-family: 'Poppins';">Tabla de Contenidos</h3>
+            <ul style="list-style: none; margin-bottom: 32px;">
+                <li style="margin-bottom: 12px;"><a href="#" style="text-decoration: none; color: var(--azul-profundo);">1. La confusión cotidiana</a></li>
+                <li style="margin-bottom: 12px;"><a href="#" style="text-decoration: none; color: var(--azul-profundo);">2. Datos vs. Opinión</a></li>
+                <li style="margin-bottom: 12px;"><a href="#" style="text-decoration: none; color: var(--azul-profundo);">3. Clasificación y Ejemplos</a></li>
+            </ul>
 
-        // Evento para iniciar la aventura
-        startBtn.addEventListener('click', () => {
-            navigateTo(mainScreen);
-        });
+            <h3 style="font-size: 18px; margin-bottom: 16px; font-family: 'Poppins';">Recursos Relacionados</h3>
+            <div class="card" style="padding: 16px; margin-bottom: 16px; border-radius: 8px;">
+                <p style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">Alfabetización Mediática</p>
+                <p style="font-size: 12px; margin-bottom: 12px;">Descubre cómo verificar fuentes y combatir las Fake News.</p>
+                <a href="#" class="btn-primary" style="font-size: 12px; padding: 8px 16px; min-height: auto;">Leer más</a>
+            </div>
+        </aside>
 
-        // Evento para volver al mapa
-        backBtn.addEventListener('click', () => {
-            navigateTo(mainScreen);
-        });
+    </main>
 
-        // Eventos para abrir el detalle de cada planeta
-        planetButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const planetName = button.getAttribute('title');
-                const planetClasses = button.className;
-
-                // Actualizar el contenido de la pantalla de detalle
-                planetTitle.textContent = planetName;
-                planetImageDetail.className = 'w-64 h-64 md:w-96 md:h-96 planet'; // Reset classes
-                planetImageDetail.classList.add(...planetClasses.split(' ').filter(c => c !== 'open-detail'));
-
-                navigateTo(detailScreen);
-            });
-        });
-    </script>
 </body>
 </html>
